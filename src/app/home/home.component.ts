@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  imports: [CommonModule],
 })
 export class HomeComponent implements OnInit {
   products: any[] = [];

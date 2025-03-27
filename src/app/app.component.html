@@ -1,11 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="/">Product Store</a>
-    <ul class="navbar-nav">
-      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="/add-product">Add Product</a></li>
-      <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
-      <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
-    </ul>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/add-product">Add Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cart">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+
+<div class="container mt-4">
+  <app-home *ngIf="getCurrentPage() === '/'"></app-home>
+  <app-add-product *ngIf="getCurrentPage() === '/add-product'"></app-add-product>
+  <app-cart *ngIf="getCurrentPage() === '/cart'"></app-cart>
+  <app-dashboard *ngIf="getCurrentPage() === '/dashboard'"></app-dashboard>
+</div>
